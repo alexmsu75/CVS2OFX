@@ -59,7 +59,7 @@ public class Application implements CommandLineRunner {
     if (log.isLoggable(Level.FINER))
       log.entering(__className, __functionName);
     try {
-      log.logp(Level.FINEST, __className, __functionName, "xlsFileLocation: {0}", xlsFileLocation);
+      log.logp(Level.INFO, __className, __functionName, "using xlsFileLocation: {0}", xlsFileLocation);
       final List<CapitalOneSparkTransaction> capitalOneSparkTransactions = loadObjectList(CapitalOneSparkTransaction.class, xlsFileLocation.contains("://") ? xlsFileLocation : ("file://" + xlsFileLocation));
       log.logp(Level.FINEST, __className, __functionName, "capitalOneSparkTransactions: {0}", capitalOneSparkTransactions);
       if (capitalOneSparkTransactions.size() > 0) {
@@ -145,6 +145,7 @@ public class Application implements CommandLineRunner {
               messageSets.add(bankingResponseMessageSet);
               responseEnvelope.setMessageSets(messageSets);
               marshaller.marshal(responseEnvelope, ofxV1Writer);
+              log.logp(Level.INFO, __className, __functionName, "coverted to file: {0}", ofxFileLocation);
             } finally {
               if (ofxV1Writer != null)
                 ofxV1Writer.close();
