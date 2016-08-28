@@ -1,4 +1,4 @@
-# CVS2OFX [![Build Status](https://travis-ci.org/alexmsu75/CVS2OFX.svg?branch=master)](https://travis-ci.org/salexmsu75/CVS2OFX)
+# CVS2OFX [![Build Status](https://travis-ci.org/alexmsu75/CVS2OFX.svg?branch=master)](https://travis-ci.org/alexmsu75/CVS2OFX)
 CSV to OFX converter, mainly used to track transactions from Capital One Spark.
 
 ## Usage
